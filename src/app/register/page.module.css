@@ -1,0 +1,256 @@
+.page {
+  min-height: 100vh;
+  padding: 100px 24px 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--bg-base);
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 44px 38px;
+  box-shadow: var(--shadow-md);
+  animation: fade-in-up 0.3s ease;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.logoIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--emerald-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.logoText {
+  font-family: var(--font-display, inherit);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.logoAccent {
+  color: var(--emerald-600);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.successIcon {
+  display: flex;
+  justify-content: center;
+  color: var(--emerald-600);
+  margin-bottom: 16px;
+}
+
+/* Role Grid */
+.roleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.roleBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface-warm);
+  border: 1.5px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  font-family: inherit;
+}
+
+.roleBtn:hover {
+  border-color: var(--emerald-400);
+  background: var(--emerald-50);
+}
+
+.roleBtnActive {
+  border-color: var(--emerald-600) !important;
+  background: var(--emerald-50) !important;
+  box-shadow: 0 0 0 2px var(--emerald-100);
+}
+
+.roleIcon {
+  font-size: 26px;
+  margin-bottom: 2px;
+}
+
+.roleLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.roleDesc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.inputWithIcon {
+  padding-left: 42px !important;
+}
+
+.inputWithIconRight {
+  padding-right: 42px !important;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin: 8px 0 20px;
+  line-height: 1.5;
+}
+
+.checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--emerald-600);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.link {
+  color: var(--emerald-700);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+  background: var(--emerald-600);
+  color: white;
+}
+
+.submitBtn:hover {
+  background: var(--emerald-700);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.loginBtn {
+  width: 100%;
+  justify-content: center;
+  background: var(--emerald-50, #ecfdf5) !important;
+  color: var(--emerald-800, #065f46) !important;
+  border: 1.5px solid var(--emerald-300, #6ee7b7) !important;
+  font-weight: 700 !important;
+  padding: 12px 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.loginBtn:hover {
+  background: var(--emerald-600, #059669) !important;
+  border-color: var(--emerald-600, #059669) !important;
+  color: #ffffff !important;
+}

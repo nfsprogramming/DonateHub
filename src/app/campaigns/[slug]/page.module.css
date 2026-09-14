@@ -1,0 +1,273 @@
+.page { padding-top: 64px; min-height: 100vh; background: var(--bg-base); }
+
+.notFound {
+  min-height: 80vh;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 20px;
+  font-size: 20px; color: var(--text-secondary);
+}
+
+.backBar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+
+.backLink {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--text-secondary);
+  text-decoration: none; transition: color 0.15s;
+}
+.backLink:hover { color: var(--primary); }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  padding: 40px 0 80px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+
+/* Main */
+.main { display: flex; flex-direction: column; gap: 28px; }
+
+.header { display: flex; flex-direction: column; gap: 12px; }
+
+.urgentBar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  background: var(--emergency-soft);
+  border: 1px solid rgba(201,66,66,0.15);
+  border-radius: var(--radius-md);
+  color: var(--emergency); font-size: 14px; font-weight: 600;
+}
+
+.metaRow {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+
+.location, .verified {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; color: var(--text-secondary);
+}
+
+.verified { color: var(--accent-gold); font-weight: 600; }
+
+.title { font-size: clamp(22px, 3vw, 32px); font-weight: 800; line-height: 1.2; color: var(--text-primary); }
+
+.ngoRow {
+  font-size: 14px; color: var(--text-secondary);
+}
+
+.ngoRow strong { color: var(--primary); }
+
+/* Image */
+.imagePlaceholder {
+  height: 360px; border-radius: var(--radius-xl);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  overflow: hidden; position: relative;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+}
+
+.imageInner {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px 24px 24px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  z-index: 10;
+}
+
+.imageCat {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: white;
+  background: rgba(255,255,255,0.2); backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.imageGradientText {
+  font-size: 22px; font-weight: 700;
+  color: white;
+}
+
+/* Sections */
+.section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+.sectionTitle {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 17px; font-weight: 700;
+  color: var(--text-primary);
+}
+
+.description { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+.tagsRow { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Fund Usage */
+.fundUsage { display: flex; flex-direction: column; gap: 20px; }
+.fundItem { display: flex; flex-direction: column; gap: 6px; }
+.fundHeader { display: flex; justify-content: space-between; align-items: center; }
+.fundLabel { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+
+.fundPercent {
+  font-size: 14px; font-weight: 700;
+  color: var(--primary);
+}
+
+.fundAmount { font-size: 12px; color: var(--text-muted); }
+
+/* Updates */
+.updates { display: flex; flex-direction: column; gap: 0; }
+
+.update {
+  display: flex; gap: 16px;
+  padding-bottom: 24px; position: relative;
+}
+
+.update:not(:last-child)::after {
+  content: ''; position: absolute; left: 7px; top: 24px; bottom: 0;
+  width: 2px; background: var(--border-default);
+}
+
+.updateDot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--primary); flex-shrink: 0; margin-top: 3px;
+}
+
+.updateContent { display: flex; flex-direction: column; gap: 6px; }
+
+.updateDate {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--text-muted);
+}
+
+.updateTitle { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.updateDesc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Item Grid */
+.itemGrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px;
+}
+
+.itemCard {
+  padding: 14px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.itemHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.itemName { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.itemQty { font-size: 12px; color: var(--text-muted); }
+
+/* Sidebar */
+.sidebar { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 20px; }
+
+.donationCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.progressArea { display: flex; flex-direction: column; gap: 8px; }
+
+.raisedRow {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+
+.raised {
+  font-size: 26px; font-weight: 800; color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.progressPct {
+  font-size: 14px; font-weight: 700;
+  color: var(--primary);
+}
+
+.goalRow {
+  display: flex; justify-content: space-between;
+  font-size: 13px; color: var(--text-muted);
+}
+
+.urgent { color: var(--emergency) !important; font-weight: 600; }
+
+.quickStats {
+  display: flex; gap: 16px;
+  padding: 14px;
+  background: var(--bg-base);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.quickStat {
+  display: flex; align-items: center; gap: 10px;
+  flex: 1; color: var(--text-secondary);
+}
+
+.quickStatValue { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.quickStatLabel { font-size: 11px; color: var(--text-muted); }
+
+.donateBtn { width: 100%; justify-content: center; font-size: 16px; padding: 14px; }
+
+.shareRow { display: flex; gap: 8px; }
+.shareBtn, .wishlistBtn { flex: 1; justify-content: center; }
+
+.taxNote {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--success);
+  padding: 10px;
+  background: var(--success-soft);
+  border: 1px solid rgba(47,138,91,0.12);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+/* Recent Donors */
+.recentDonors {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+.recentTitle { font-size: 15px; font-weight: 600; }
+
+.recentDonor {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.donorAvatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+}
+
+.donorInfo { display: flex; flex-direction: column; gap: 1px; flex: 1; }
+.donorName { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+.donorTime { font-size: 11px; color: var(--text-muted); }
+.donorAmount { font-size: 13px; font-weight: 700; color: var(--primary); }
+
+/* ─── Mobile Sticky CTA ─── */
+@media (max-width: 1024px) {
+  .sidebar { position: static; }
+}
